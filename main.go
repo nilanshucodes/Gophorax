@@ -10,11 +10,11 @@ type Job struct {
 }
 //we are using channels to send jobs to workers and get results back
 func main(){
-	jobs := make(chan Job, 10)
+	jobs := make(chan Job, 10)//water->Job pipe->jobs
 	results := make(chan Result, 10)
 	urls:=os.Args[1:]
 	numJobs := len(urls)
-	go func() {
+	go func() {//background task to send jobs to the channel
 		for _, url := range urls {
 			jobs <- Job{Url: url}
 		}
@@ -29,7 +29,7 @@ func main(){
 	var totalLatency float32
 
 	for i:=0; i<numJobs; i++ {
-		res := <- results
+		res := <- results//each time here it pauses ,waits for any worker to send a result back, and then processes it
 		if res.StatusCode == 200 {
 			successfulPings++
 		}
