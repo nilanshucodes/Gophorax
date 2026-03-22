@@ -40,3 +40,6 @@ Unlike the default `http.Get`, GopherPulse utilizes a manual `http.Client` confi
 
 ### Non-Blocking Feed
 By wrapping the job distribution in a goroutine, the program begins processing the first URL the moment it's available, rather than waiting to load the entire list into memory first.
+
+<img width="804" height="218" alt="Screenshot 2026-03-22 at 14 55 32" src="https://github.com/user-attachments/assets/94ab0d93-bd79-4502-9160-db26e36cd9a7" />
+
