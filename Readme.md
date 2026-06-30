@@ -1,6 +1,6 @@
-# 🐹 GopherPulse
+# 🐹 Gophorax
 
-**GopherPulse** is a high-concurrency URL health monitoring tool built in Go. It uses a disciplined Worker Pool architecture to verify the status and latency of multiple targets simultaneously without overwhelming system resources.
+**Gophorax** is a high-concurrency URL health monitoring tool built in Go. It uses a disciplined Worker Pool architecture to verify the status and latency of multiple targets simultaneously without overwhelming system resources.
 
 ## Features
 * **Concurrency Control:** Uses a fixed Worker Pool to prevent "Thundering Herd" issues.
@@ -21,9 +21,9 @@ GopherPulse operates on a **Producer-Consumer** pipeline:
 
 ### 1. Clone and Build
 ```bash
-git clone [https://github.com/nilanshucodes/gopherpulse](https://github.com/nilanshucodes/gopherpulse)
-cd gopherpulse
-go build -o gopherpulse
+git clone [https://github.com/nilanshucodes/Gophorax](https://github.com/nilanshucodes/Gophorax)
+cd gophorax
+go build -o gophorax
 ```
 ### 2. Run
 Pass any number of URLs as command-line arguments:
@@ -36,7 +36,7 @@ Pass any number of URLs as command-line arguments:
 Unlike the default `http.Get`, GopherPulse utilizes a manual `http.Client` configuration:
 
 - **Timeout:** 5s (Prevents resource leaking on slow/dead servers).
-- **Headers:** Sets `User-Agent: GopherPulse/1.0` to ensure compatibility with DDoS protection layers like Cloudflare.
+- **Headers:** Sets `User-Agent: gophorax/1.0` to ensure compatibility with DDoS protection layers like Cloudflare.
 
 ### Non-Blocking Feed
 By wrapping the job distribution in a goroutine, the program begins processing the first URL the moment it's available, rather than waiting to load the entire list into memory first.
