@@ -2,14 +2,14 @@
 
 **GopherPulse** is a high-concurrency URL health monitoring tool built in Go. It uses a disciplined Worker Pool architecture to verify the status and latency of multiple targets simultaneously without overwhelming system resources.
 
-## 🚀 Features
+## Features
 * **Concurrency Control:** Uses a fixed Worker Pool to prevent "Thundering Herd" issues.
 * **Polite Pinging:** Custom HTTP Client with a `User-Agent` to avoid being flagged as a bot.
 * **Zombie Protection:** Strict 5-second timeouts to ensure workers never get stuck on hanging connections.
 * **Real-time Analytics:** Tracks success rates and calculates average latency across all targets.
 * **Zero Dependencies:** Built entirely using the Go Standard Library.
 
-## 🏗 Architecture
+## Architecture
 GopherPulse operates on a **Producer-Consumer** pipeline:
 1.  **The Feeder (Producer):** A non-blocking goroutine that pushes URLs from CLI arguments into the Job Channel.
 2.  **The Worker Pool (Consumers):** A fixed set of 5 goroutines that pull jobs, execute the network logic, and report results.
@@ -17,11 +17,11 @@ GopherPulse operates on a **Producer-Consumer** pipeline:
 
 
 
-## 🛠 Installation & Usage
+## Installation & Usage
 
 ### 1. Clone and Build
 ```bash
-git clone [https://github.com/your-username/gopherpulse](https://github.com/your-username/gopherpulse)
+git clone [https://github.com/nilanshucodes/gopherpulse](https://github.com/nilanshucodes/gopherpulse)
 cd gopherpulse
 go build -o gopherpulse
 ```
