@@ -28,7 +28,7 @@ go build -o gophorax
 ### 2. Run
 Pass any number of URLs as command-line arguments:
 ```bash
-./gopherpulse [https://google.com](https://google.com) [https://github.com](https://github.com) [https://codeforces.com](https://codeforces.com)
+./gophorax [https://google.com](https://google.com) [https://github.com](https://github.com) [https://codeforces.com](https://codeforces.com)
 ```
 ## Technical Deep Dive
 
